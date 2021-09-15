@@ -8,6 +8,7 @@ import s from './Contact.module.css';
 
 const ContactList = ({ name, number }) => {
   const contacts = useSelector(getContactsList);
+
   const dispatch = useDispatch();
 
   const onDeleteContact = id => dispatch(contactsActions.deleteContact(id));

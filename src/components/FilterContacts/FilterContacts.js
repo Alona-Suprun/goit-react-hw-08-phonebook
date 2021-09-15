@@ -12,6 +12,7 @@ const FilterContact = () => {
 
   return (
     <>
+      <h2>Contacts</h2>
       <label className={s.label}>
         Find contacts by name
         <input

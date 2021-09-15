@@ -1,19 +1,24 @@
-import Section from './components/Section/Section';
-import Form from './components/ContactForm/ContactForm';
-import ContactList from './components/ContactList/ContactList';
-import FilterContact from './components/FilterContacts/FilterContacts';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
+
+import Navigation from './components/Navigation/Navigation';
 
 const App = () => {
   return (
     <>
-      <h1>Phonebook</h1>
-      <Section>
-        <Form />
-      </Section>
-      <Section title="Contacts">
-        <FilterContact />
-        <ContactList />
-      </Section>
+      <Navigation />
+
+      <ToastContainer
+        position="top-center"
+        autoClose={2500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </>
   );
 };

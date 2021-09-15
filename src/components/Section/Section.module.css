@@ -1,16 +1,13 @@
 section {
-  padding: 20px;
-  border: 2px solid orange;
-  border-radius: 5px;
-  width: 300px;
-  margin: auto;
-  background-color: rgb(255, 255, 233);
-  margin-bottom: 10px;
-}
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 
-.title {
-  color: #29a6af;
-  margin: 0px;
-  font-size: 26px;
-    font-weight: 700;
+  padding: 20px;
+  border: 2px solid #d2cbc1;
+  border-radius: 5px;
+  max-width: 800px;
+  margin: auto;
+  background-color: #d2cbc18f;
+  margin-bottom: 10px;
 }

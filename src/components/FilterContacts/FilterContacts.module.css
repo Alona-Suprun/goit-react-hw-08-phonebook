@@ -1,15 +1,14 @@
-.label{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-    color: orange;
+.label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  color: gray;
 }
 .input {
   border-radius: 5px;
-  border: 2px solid orange;
+  border: 2px solid #ffafca;
   padding: 5px;
-  
 }
-.input::placeholder{
-  color: #29a6af;
+.input::placeholder {
+  color: gray;
 }
