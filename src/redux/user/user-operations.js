@@ -12,7 +12,7 @@ const token = {
   },
 };
 
-const Registration = createAsyncThunk(
+const register = createAsyncThunk(
   'user/registration',
   async (userData, { rejectWithValue }) => {
     try {
@@ -42,7 +42,7 @@ const Registration = createAsyncThunk(
   },
 );
 
-export const logIn = createAsyncThunk(
+const LogIn = createAsyncThunk(
   'authUser/logIn',
   async (userData, { rejectWithValue }) => {
     try {
@@ -105,4 +105,5 @@ export const fetchCurrentUser = createAsyncThunk(
     }
   },
 );
-export default Registration;
+// eslint-disable-next-line import/no-anonymous-default-export
+export default { register, LogIn };

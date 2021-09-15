@@ -18,6 +18,10 @@ const RegistrationPage = lazy(() =>
     '../RegistrationPage/RegistrationPage.js' /*webpackChunkName: "registration-page" */
   ),
 );
+const LoginPage = lazy(() =>
+  import('../LoginPage/LoginPage.js' /*webpackChunkName: "login-page" */),
+);
+
 const Navigation = () => (
   <>
     <ul className={s.navigation}>
@@ -49,12 +53,22 @@ const Navigation = () => (
           Registration
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/login"
+          className={s.navLink}
+          activeClassName={s.navLinkActive}
+        >
+          Login
+        </NavLink>
+      </li>
     </ul>
-    <Suspense fallback={<Loader type="Circles" color="#ffafca" />}>
+    <Suspense fallback={<Loader type="Circles" color="#efb3ac" />}>
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/phonebook" component={PhonebookPage} />
         <Route exact path="/registration" component={RegistrationPage} />
+        <Route exact path="/login" component={LoginPage} />
       </Switch>
     </Suspense>
   </>

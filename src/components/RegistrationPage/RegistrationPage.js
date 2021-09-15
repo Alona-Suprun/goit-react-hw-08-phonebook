@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import RegistrationForm from '../RegistrationForm/RregisterForm';
 import Section from '../Section/Section';
 
@@ -11,6 +12,9 @@ const RegistrationPage = () => {
       <Section>
         <RegistrationForm />
       </Section>
+      <p>If Yuohave an account, please</p>
+
+      <Link to="/login">Login</Link>
     </>
   );
 };

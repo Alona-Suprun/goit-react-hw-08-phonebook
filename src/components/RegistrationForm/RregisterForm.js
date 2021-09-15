@@ -1,7 +1,8 @@
 import { useDispatch } from 'react-redux';
-import s from '../ContactForm/ContactForm.module.css';
-import Registration from '../../redux/user/user-operations';
+import register from '../../redux/user/user-operations';
 import Button from '../Button/Button';
+
+import s from '../ContactForm/ContactForm.module.css';
 
 const RegistrationForm = () => {
   const dispatch = useDispatch();
@@ -11,7 +12,7 @@ const RegistrationForm = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    dispatch(Registration({ name, email, password }));
+    dispatch(register({ name, email, password }));
     reset(e);
   };
 
