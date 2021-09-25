@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import LogIn from '../../redux/user/user-operations';
+import { logIn } from '../../redux/authUser/authUser-operations';
 import Button from '../Button/Button';
 
 import s from '../ContactForm/ContactForm.module.css';
@@ -12,7 +12,7 @@ const LoginForm = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    dispatch(LogIn({ email, password }));
+    dispatch(logIn({ email, password }));
     reset(e);
   };
 
@@ -37,7 +37,7 @@ const LoginForm = () => {
         Password
         <input
           autoComplete="off"
-          placeholder="8 symbols minimum"
+          placeholder="7 symbols minimum"
           className={s.input}
           type="password"
           name="password"

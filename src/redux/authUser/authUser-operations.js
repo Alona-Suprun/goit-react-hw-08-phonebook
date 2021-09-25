@@ -1,9 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
-const token = {
+export const token = {
   set(token) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
   },
@@ -12,15 +13,15 @@ const token = {
   },
 };
 
-const register = createAsyncThunk(
-  'user/registration',
+export const register = createAsyncThunk(
+  'authUser/register',
   async (userData, { rejectWithValue }) => {
     try {
       const data = await axios
         .post('/users/signup', userData)
         .then(({ data }) => data);
       token.set(data.token);
-      //toast.success(`Hello, ${data.user.name}!`);
+      toast.success(`Hello, ${data.user.name}!`);
       return data;
     } catch (error) {
       //toast.error(
@@ -42,7 +43,7 @@ const register = createAsyncThunk(
   },
 );
 
-const LogIn = createAsyncThunk(
+export const logIn = createAsyncThunk(
   'authUser/logIn',
   async (userData, { rejectWithValue }) => {
     try {
@@ -105,5 +106,11 @@ export const fetchCurrentUser = createAsyncThunk(
     }
   },
 );
-// eslint-disable-next-line import/no-anonymous-default-export
-export default { register, LogIn };
+
+//const userOperations = {
+// register,
+// logIn,
+// logOut,
+//fetchCurrentUser,
+//};
+//export default userOperations;

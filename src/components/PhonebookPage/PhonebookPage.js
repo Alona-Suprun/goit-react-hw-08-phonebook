@@ -1,14 +1,14 @@
 import Section from '../Section/Section';
-import Form from '../ContactForm/ContactForm';
-import ContactList from '../ContactList/ContactList';
-import FilterContact from '../FilterContacts/FilterContacts';
+import ContactForm from '../../components/ContactForm/ContactForm.js';
+import ContactList from '../../components/ContactList/ContactList.js';
+import FilterContact from '../../components/FilterContacts/FilterContacts.js';
 
 const PhonebookPage = () => {
   return (
     <>
       <h1>Phonebook</h1>
       <Section>
-        <Form />
+        <ContactForm />
         <div>
           <FilterContact />
           <ContactList />

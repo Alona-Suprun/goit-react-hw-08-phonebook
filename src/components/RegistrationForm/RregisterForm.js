@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import register from '../../redux/user/user-operations';
+import { register } from '../../redux/authUser/authUser-operations';
 import Button from '../Button/Button';
 
 import s from '../ContactForm/ContactForm.module.css';
@@ -52,9 +52,9 @@ const RegistrationForm = () => {
             className={s.input}
             type="password"
             name="password"
-            minLength="8"
+            minLength="7"
             autoComplete="off"
-            placeholder="8 symbols minimum"
+            placeholder="7 symbols minimum"
             required
           />
         </label>

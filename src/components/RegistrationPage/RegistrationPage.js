@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import RegistrationForm from '../RegistrationForm/RregisterForm';
 import Section from '../Section/Section';
 
+import s from '../LoginPage/LoginPage.module.css';
+
 const RegistrationPage = () => {
   return (
     <>
@@ -12,9 +14,11 @@ const RegistrationPage = () => {
       <Section>
         <RegistrationForm />
       </Section>
-      <p>If Yuohave an account, please</p>
+      <p>If You have an account, please</p>
 
-      <Link to="/login">Login</Link>
+      <Link to="/login" className={s.link}>
+        Login
+      </Link>
     </>
   );
 };
