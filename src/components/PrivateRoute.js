@@ -1,12 +1,12 @@
 import { Redirect, Route } from 'react-router';
 import { useSelector } from 'react-redux';
-import { getUserIsLogedIn } from '../redux/authUser/authUser-selectors';
+import { getUserIsLoggedIn } from '../redux/authUser/authUser-selectors';
 
 const PrivateRoute = ({ children, ...routeProps }) => {
-  const isLogedIn = useSelector(getUserIsLogedIn);
+  const isLoggedIn = useSelector(getUserIsLoggedIn);
   return (
     <Route {...routeProps}>
-      {isLogedIn ? children : <Redirect to="/login" />}
+      {isLoggedIn ? children : <Redirect to="/login" />}
     </Route>
   );
 };

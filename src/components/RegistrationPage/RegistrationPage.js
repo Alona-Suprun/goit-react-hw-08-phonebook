@@ -14,7 +14,7 @@ const RegistrationPage = () => {
       <Section>
         <RegistrationForm />
       </Section>
-      <p>If You have an account, please</p>
+      <p className={s.link}>If You have an account, please</p>
 
       <Link to="/login" className={s.link}>
         Login

@@ -21,9 +21,9 @@ const Contact = ({ name, number, id }) => {
 };
 
 Contact.propTypes = {
-  name: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
-  onDeleteContact: PropTypes.func,
+  name: PropTypes.string,
+  number: PropTypes.string,
+  id: PropTypes.string,
 };
 
 export default Contact;

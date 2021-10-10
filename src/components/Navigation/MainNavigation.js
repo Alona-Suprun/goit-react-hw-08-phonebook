@@ -9,31 +9,26 @@ import s from './Navigation.module.css';
 
 const MainNavigation = () => {
   //const userIsLogedIn = useSelector(getUserIsLogedIn);
-
+  //className={s.navigation}
   return (
     <>
-      <ul className={s.navigation}>
-        <li>
-          <NavLink
-            exact
-            to="/registration"
-            className={s.navLink}
-            activeClassName={s.navLinkActive}
-          >
-            Registration
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            exact
-            to="/login"
-            className={s.navLink}
-            activeClassName={s.navLinkActive}
-          >
-            Login
-          </NavLink>
-        </li>
-      </ul>
+      <NavLink
+        exact
+        to="/registration"
+        className={s.navLink}
+        activeClassName={s.navLinkActive}
+      >
+        Registration
+      </NavLink>
+
+      <NavLink
+        exact
+        to="/login"
+        className={s.navLink}
+        activeClassName={s.navLinkActive}
+      >
+        Login
+      </NavLink>
     </>
   );
 };

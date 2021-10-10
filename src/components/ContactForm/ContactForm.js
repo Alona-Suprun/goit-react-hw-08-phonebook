@@ -22,35 +22,31 @@ const ContactForm = () => {
   }, [history, contacts]);
 
   //const inputChange = e => {
-  //  const { name, value } = e.target;
+  // const { name, value } = e.target;
   //  switch (name) {
   //   case 'name':
-  //     setName(value);
-  //    break;
-  //
-  // case 'number':
-  //    setNumber(value);
-  //   break;
+  //    setName(value);
+  //     break;
 
-  //  default:
-  //   return;
+  //  case 'number':
+  //     setNumber(value);
+  //     break;
+
+  // default:
+  //    return;
   //  }
   // };
 
-  const resetForm = e => {
-    e.target.name.value = '';
-    e.target.number.value = '';
-  };
-
-  const formSubmit = e => {
+  const formSubmit = async e => {
+    e.preventDefault();
     const name = e.target.name.value;
     const number = e.target.number.value;
-    e.preventDefault();
     const existingName = contacts.find(
       prevContact => prevContact.name === name,
     );
     if (existingName) {
       alert(`${existingName.name} is already in contact list`);
+      // resetForm();
       return;
     }
 
@@ -61,6 +57,11 @@ const ContactForm = () => {
 
     dispatch(contactsOperations.setContact(newContact));
     resetForm();
+  };
+
+  const resetForm = e => {
+    e.target.name.value = '';
+    e.target.number.value = '';
   };
 
   return (
@@ -75,8 +76,8 @@ const ContactForm = () => {
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
           required
-          // value={name}
-          //onChange={inputChange}
+          //value={name}
+          // onChange={inputChange}
         />
       </label>
 
@@ -90,8 +91,8 @@ const ContactForm = () => {
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
           required
-          // value={number}
-          //  onChange={inputChange}
+          //  value={number}
+          // onChange={inputChange}
         />
       </label>
 

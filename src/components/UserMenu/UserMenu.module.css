@@ -1,0 +1,9 @@
+.userName {
+  color: rgb(43, 43, 43);
+  font-weight: 900;
+  margin-right: 30px;
+}
+.userNav {
+  display: flex;
+  align-items: center;
+}

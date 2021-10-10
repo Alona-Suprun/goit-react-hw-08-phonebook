@@ -9,6 +9,7 @@ import Loader from 'react-loader-spinner';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import { fetchCurrentUser } from './redux/authUser/authUser-operations';
 import { getFetchingCurrentUser } from './redux/authUser/authUser-selectors';
+//import { getUserIsLogedIn } from './redux/authUser/authUser-selectors';
 import AppBar from './components/AppBar/AppBar';
 import PrivateRoute from './components/PrivateRoute';
 import PublicRoute from './components/PublicRoute';
@@ -36,6 +37,7 @@ const LoginPage = lazy(() =>
 
 const App = () => {
   const isFetchingCurrentUser = useSelector(getFetchingCurrentUser);
+  // const userIsLogedIn = useSelector(getUserIsLogedIn);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -45,27 +47,25 @@ const App = () => {
     !isFetchingCurrentUser && (
       <>
         <AppBar />
-        <Switch>
-          <Suspense fallback={<Loader type="Circles" color="#efb3ac" />}>
-            <PublicRoute exact path="/">
+        <Suspense fallback={<Loader type="Circles" color="#efb3ac" />}>
+          <Switch>
+            <PublicRoute path="/" exact>
               <HomePage />
             </PublicRoute>
-            <PublicRoute
-              exact
-              path="/registration"
-              restricted
-              redirectTo="/phonebook"
-            >
+
+            <PublicRoute path="/registration" redirectTo="/contacts" restricted>
               <RegistrationPage />
             </PublicRoute>
-            <PublicRoute exact path="/login" restricted redirectTo="/phonebook">
+
+            <PublicRoute path="/login" redirectTo="/contacts" restricted>
               <LoginPage />
             </PublicRoute>
-            <PrivateRoute exact path="/phonebook">
+
+            <PrivateRoute path="/contacts" redirectTo="/login">
               <PhonebookPage />
             </PrivateRoute>
-          </Suspense>
-        </Switch>
+          </Switch>
+        </Suspense>
         <ToastContainer
           position="top-center"
           autoClose={2500}

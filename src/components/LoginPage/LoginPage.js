@@ -11,7 +11,7 @@ const LoginPage = () => {
       <Section>
         <LoginForm />
       </Section>
-      <p>If You do not have an account</p>
+      <p className={s.link}>If You do not have an account</p>
 
       <Link to="/registration" className={s.link}>
         Go to registration page
