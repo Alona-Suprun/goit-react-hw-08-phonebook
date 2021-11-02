@@ -46,7 +46,7 @@ const ContactForm = () => {
     );
     if (existingName) {
       alert(`${existingName.name} is already in contact list`);
-      // resetForm();
+      resetForm();
       return;
     }
 

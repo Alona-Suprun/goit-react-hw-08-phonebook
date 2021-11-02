@@ -24,20 +24,9 @@ export const register = createAsyncThunk(
       toast.success(`Hello, ${data.user.name}!`);
       return data;
     } catch (error) {
-      //toast.error(
-      // `Registration failed. Check the correctness of the entered data.`,
-      // {
-      /// style: {
-      // border: '1px solid #713200',
-      // padding: '16px',
-      // color: '#f2f4f3',
-      // },
-      //  iconTheme: {
-      //  primary: '#713200',
-      //   secondary: '#f2f4f3',
-      // },
-      // },
-      // );
+      toast.error(
+        `Registration failed. Check the correctness of the entered data.`,
+      );
       return rejectWithValue(error.message);
     }
   },
@@ -51,23 +40,12 @@ export const logIn = createAsyncThunk(
         .post('/users/login', userData)
         .then(({ data }) => data);
       token.set(data.token);
-      /// toast.success(`Hello, ${data.user.name}!`);
+      toast.success(`Hello, ${data.user.name}!`);
       return data;
     } catch (error) {
-      ////  toast.error(
-      // `Login failed. Check the correctness of the entered data. Or register.`,
-      // {
-      //style: {
-      //  border: '1px solid #713200',
-      //  padding: '16px',
-      // color: '#f2f4f3',
-      // },
-      // iconTheme: {
-      //   primary: '#713200',
-      //  secondary: '#f2f4f3',
-      ////},
-      ////  },
-      // );
+      toast.error(
+        `Login failed. Check the correctness of the entered data. Or register.`,
+      );
       return rejectWithValue(error.message);
     }
   },
